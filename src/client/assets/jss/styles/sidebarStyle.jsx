@@ -19,6 +19,9 @@ const sidebarStyle = theme => ({
     },
     zIndex: theme.zIndex.drawer + 1,
   },
+  flex: { 
+    flex: '1'
+  },
   navIconHide: {
     [theme.breakpoints.up('md')]: {
       display: 'none',

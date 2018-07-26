@@ -16,7 +16,7 @@ app.use(express.json());
 app.use('/api/tasks' ,task);
 
 //Static files
-app.use(express.static('public'));
+app.use(express.static('dist'));
 
 //Starting server
 app.listen(app.get('port'), () => {

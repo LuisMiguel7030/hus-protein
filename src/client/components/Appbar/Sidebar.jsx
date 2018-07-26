@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {  NavLink } from 'react-router-dom';
 import sidebarStyle from '../../assets/jss/styles/sidebarStyle.jsx';
 import { withStyles } from '@material-ui/core/styles';
+import { FavoriteBorder, ShoppingCart } from '@material-ui/icons';
 import { 
   Icon,
   List, 
@@ -14,6 +15,7 @@ import {
   Toolbar,
   Typography,
   IconButton,
+  Button,
   Hidden } 
 from '@material-ui/core';
 
@@ -67,9 +69,16 @@ class Sidebar extends React.Component {
             >
               <Icon className='material-ui'>menu</Icon>
             </IconButton>
-            <Typography variant="title" color="secondary" noWrap>
+            <Typography variant="title" color="secondary" className={classes.flex}>
               Hus Protein
             </Typography>
+            <IconButton color="inherit" className={classes.button}>
+              <FavoriteBorder />
+            </IconButton>
+            <IconButton color="inherit" className={classes.button}>
+              <ShoppingCart />
+            </IconButton>
+            <Button color="inherit">Iniciar Sesión</Button>
           </Toolbar>
         </AppBar>
         <Hidden mdUp>
