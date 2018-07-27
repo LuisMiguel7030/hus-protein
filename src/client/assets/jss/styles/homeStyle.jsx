@@ -1,4 +1,5 @@
 import slider from '../../img/slider.jpg';
+import { secundaryColor } from '../Style.jsx';
 
 const homeStyle = theme => ({
     container: {
@@ -36,6 +37,16 @@ const homeStyle = theme => ({
             minHeight: '250px',
         },
     },
-    
+    containerCategories: {
+        margin: '30px 0'
+    },
+    categoriesTitle: {
+        display: 'flex',
+        justifyContent: 'center',
+        fontSize: '24px',
+        fontWeight: '600',
+        marginBottom: '20px',
+        color: {secundaryColor}   
+    }
 });
 export default homeStyle;

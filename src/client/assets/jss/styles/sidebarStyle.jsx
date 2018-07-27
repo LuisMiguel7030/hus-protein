@@ -1,5 +1,4 @@
-
-const drawerWidth = 240;
+import { drawerWidth } from '../Style.jsx';
 
 const sidebarStyle = theme => ({
   root: {
