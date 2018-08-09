@@ -6,6 +6,7 @@ import { blueGrey, lightGreen } from '@material-ui/core/colors';
 import appStyle from './assets/jss/styles/appStyle.jsx';
 import Sidebar from './components/Appbar/Sidebar.jsx';
 import menuRoutes from './routes/menu.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 
 const muiTheme = createMuiTheme({
@@ -32,12 +33,13 @@ class App extends Component {
           <MuiThemeProvider theme={muiTheme}>
               <Sidebar routes={menuRoutes} />
               <div className={classes.wrapper}>
-              <div className={classes.mainPanel}>
-                <div className={classes.content}>
-                  <div className={classes.toolbar} />
-                  {switchRoters}
+                <div className={classes.mainPanel}>
+                  <div className={classes.content}>
+                    <div className={classes.toolbar} />
+                    {switchRoters}
+                  </div>
+                  <Footer />
                 </div>
-              </div>
               </div> 
           </MuiThemeProvider>
         
