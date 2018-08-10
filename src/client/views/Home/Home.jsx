@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import homeStyle from '../../assets/jss/styles/homeStyle.jsx';
 import { withStyles } from '@material-ui/core/styles';
 import { Paper, Grid, Typography } from '@material-ui/core';
-import ProductCard from '../../components/Card/ProductCard.jsx';
-import PopularCategoriesCard from '../../components/Card/PopularCategoriesCard.jsx';
+import { ProductCard, PopularCategoriesCard } from '../../components';
 
 const products = [
   { id: 1, name: 'Whey Gold Standard', provider: 'Optimum Nutrition', price: 129900 },

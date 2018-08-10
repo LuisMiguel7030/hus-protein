@@ -13,6 +13,7 @@ const productCardStyel = theme => ({
     },
     card: {
        maxWidth: 240,
+       maxHeight: 443,
     },
     title: {
         fontSize: 18,

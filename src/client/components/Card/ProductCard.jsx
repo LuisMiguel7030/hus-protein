@@ -16,8 +16,6 @@ import {
 
 class ProductCard extends Component {
 
-
-
     render() {
       const { classes, name, provider, price } = this.props;
     return (
