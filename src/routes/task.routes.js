@@ -4,14 +4,14 @@ import Task from '../models/task.js';
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    const tasks = await Task.find()
+    const tasks = await Task.find();
     res.json(tasks);
 });
 
 router.get('/:id', async (req, res) => {
     const task = await Task.findById(req.params.id);
     res.json(task);
-})
+});
 
 router.post('/', async (req, res) => {
     const { title, description } = req.body;

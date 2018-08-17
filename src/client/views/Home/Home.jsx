@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import homeStyle from '../../assets/jss/styles/homeStyle.jsx';
+import homeStyle from '../../assets/jss/styles/homeStyle.jsx'; 
 import { withStyles } from '@material-ui/core/styles';
 import { Paper, Grid, Typography } from '@material-ui/core';
 import { ProductCard, PopularCategoriesCard } from '../../components';

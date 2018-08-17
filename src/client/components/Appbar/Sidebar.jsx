@@ -45,7 +45,7 @@ class Sidebar extends React.Component {
                  key={key}>
                   <ListItem button>
                     <ListItemIcon>
-                      <props.icon/>
+                      { props.icon ? <props.icon/> : <div/> }
                     </ListItemIcon>
                     <ListItemText primary={props.sidebarName}/>
                   </ListItem>
