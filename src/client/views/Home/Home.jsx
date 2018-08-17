@@ -38,10 +38,13 @@ class Home extends Component {
           { products.map( (proteins) => {
             return (
               <Grid item key={proteins.id}>
-                <ProductCard 
-                  name={proteins.name} 
-                  provider={proteins.provider} 
-                  price={proteins.price}/>
+                <ProductCard
+                    image='http://localhost:3000/product-image/proteina.png'
+                    title={proteins.name}
+                    brand={proteins.provider}
+                    price={proteins.price}
+                    quantity={1}
+                />
               </Grid>
             );
           })}

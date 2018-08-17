@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import productCardStyel from '../../assets/jss/styles/productCardStyel.jsx';
-import proteina from '../../assets/img/proteina.png';
+import LabelProduct from '../Label/LabelProductStatus.jsx';
 import classNames from 'classnames';
 import { AddShoppingCart, FavoriteBorder } from '@material-ui/icons';
 import { 
@@ -11,37 +11,65 @@ import {
     CardContent, 
     CardActions, 
     Typography, 
-    IconButton,
-    Paper } from '@material-ui/core';
+    IconButton } from '@material-ui/core';
 
 class ProductCard extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            status: {
+                inStock: false,
+                outStock: false
+            }
+        };
+    };
+
+    componentDidMount() {
+        this.validateStatus();
+    }
+
+    validateStatus = () => {
+        const { status } = this.state;
+        if (this.props.quantity) {
+            this.setState({status: {
+                    inStock: !status.inStock,
+                    outStock: status.outStock
+                }})
+        } else {
+            this.setState({status: {
+                    inStock: status.inStock,
+                    outStock: !status.outStock
+                }})
+        }
+    };
 
     render() {
-      const { classes, name, provider, price } = this.props;
+        const { classes } = this.props;
+        const { status } = this.state;
     return (
       <div>
         <Card className={classes.card}>
             <CardMedia 
               component='img'
-              image={proteina}
+              src={this.props.image}
               title='Imagen de la proteina'/>  
             <CardContent>
-                <Paper className={classes.news} color='secondary'>
-                    <Typography  component="span">
-                        20% DE DESCUENTO
-                    </Typography>
-                </Paper>
+                <LabelProduct
+                    outStock={status.outStock}
+                    inStock={status.inStock}
+                />
                 <Typography className={classes.title} variant="headline" component="h2">
-                    {name}
+                    {this.props.title}
                 </Typography>
                 <Typography className={classes.subtitle} color="textSecondary">
-                    {provider}
+                    {this.props.brand}
                 </Typography>
                 
             </CardContent>
             <CardActions className={classes.action}>
                 <Typography className={classes.price}  color='secondary' variant='title' component="p">
-                   ${price.toLocaleString()}
+                   ${this.props.price.toLocaleString()}
                 </Typography>
                 <div className={classes.actionContainer}>
                     <IconButton color="default" className={classes.button}>
@@ -60,9 +88,10 @@ class ProductCard extends Component {
 
 ProductCard.propTypes = {
     classes: PropTypes.object.isRequired,
-    name: PropTypes.string.isRequired,
-    provider: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    brand: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
 };
 
 

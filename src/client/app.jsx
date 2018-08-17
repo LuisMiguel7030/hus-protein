@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { MuiThemeProvider, createMuiTheme, withStyles} from '@material-ui/core/styles';
 import { blueGrey, lightGreen } from '@material-ui/core/colors';
 import appStyle from './assets/jss/styles/appStyle.jsx';
@@ -17,11 +17,15 @@ const muiTheme = createMuiTheme({
 });
 
 const switchRouters = (
-      menuRoutes.map( (props, key) => {
-        return (
-          <Route path={props.path} exact={props.exact} component={props.component} key={key}/>
-        );
-      })
+    <Switch>
+        {
+            menuRoutes.map( (props, key) => {
+                return (
+                    <Route path={props.path} exact={props.exact} component={props.component} key={key}/>
+                );
+            })
+        }
+    </Switch>
 );
 
 class App extends Component {

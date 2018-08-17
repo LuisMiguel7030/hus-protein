@@ -16,6 +16,7 @@ const primaryColor = "#64DD17";
 const secundaryColor = "#282828";
 const successColor = "#2ecc71";
 const dangerColor = "#f44336";
+const accentColor = "#BEDDB1";
 
 const defaultFont = {
   fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
@@ -28,11 +29,13 @@ const transition = {
 };
 
 export {
-  container,
-  drawerWidth,
-  transition,
-  primaryColor,
-  secundaryColor,
-  successColor,
-  defaultFont
+    container,
+    drawerWidth,
+    transition,
+    primaryColor,
+    secundaryColor,
+    successColor,
+    dangerColor,
+    accentColor,
+    defaultFont
 };

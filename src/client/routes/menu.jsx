@@ -1,5 +1,7 @@
 import Home from '../views/Home/Home.jsx';
 import Task from '../views/Task/Task.jsx';
+import Protein from '../views/Category/ProteinPage.jsx';
+
 
 import { Store, Subject, KeyboardArrowRight } from '@material-ui/icons';
 
@@ -13,11 +15,11 @@ const dashboardRoutes = [
         component: Home
     },
     {
-        path: "/task",
-        sidebarName: "Masa Muscular",
-        navbarName: "Task",
+        path: "/proteins",
+        sidebarName: "Proteinas",
+        navbarName: "Protein",
         icon: '',
-        component: Task
+        component: Protein
     },
     {
         path: "/task",

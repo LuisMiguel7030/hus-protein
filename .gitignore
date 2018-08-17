@@ -63,3 +63,4 @@ typings/
 # Dist directories
 
 dist/
+src/client/api/.DS_Store
