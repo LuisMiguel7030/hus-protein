@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import productCardStyel from '../../assets/jss/styles/productCardStyel.jsx';
+import productCardStyle from '../../assets/jss/styles/productCardStyle.jsx';
 import LabelProduct from '../Label/LabelProductStatus.jsx';
 import classNames from 'classnames';
 import { AddShoppingCart, FavoriteBorder } from '@material-ui/icons';
@@ -18,10 +18,7 @@ class ProductCard extends Component {
         super(props);
 
         this.state = {
-            status: {
-                inStock: false,
-                outStock: false
-            }
+            inStock: false,
         };
     };
 
@@ -30,23 +27,14 @@ class ProductCard extends Component {
     }
 
     validateStatus = () => {
-        const { status } = this.state;
         if (this.props.quantity) {
-            this.setState({status: {
-                    inStock: !status.inStock,
-                    outStock: status.outStock
-                }})
-        } else {
-            this.setState({status: {
-                    inStock: status.inStock,
-                    outStock: !status.outStock
-                }})
+            this.setState({inStock: !this.state.inStock,})
         }
     };
 
     render() {
         const { classes } = this.props;
-        const { status } = this.state;
+        const { inStock } = this.state;
     return (
       <div>
         <Card className={classes.card}>
@@ -55,9 +43,9 @@ class ProductCard extends Component {
               src={this.props.image}
               title='Imagen de la proteina'/>  
             <CardContent>
+
                 <LabelProduct
-                    outStock={status.outStock}
-                    inStock={status.inStock}
+                    inStock={inStock}
                 />
                 <Typography className={classes.title} variant="headline" component="h2">
                     {this.props.title}
@@ -67,6 +55,7 @@ class ProductCard extends Component {
                 </Typography>
                 
             </CardContent>
+
             <CardActions className={classes.action}>
                 <Typography className={classes.price}  color='secondary' variant='title' component="p">
                    ${this.props.price.toLocaleString()}
@@ -80,6 +69,7 @@ class ProductCard extends Component {
                     </IconButton>
                 </div>  
             </CardActions>
+
         </Card>
       </div>
     )
@@ -95,4 +85,4 @@ ProductCard.propTypes = {
 };
 
 
-export default withStyles(productCardStyel)(ProductCard);
+export default withStyles(productCardStyle)(ProductCard);

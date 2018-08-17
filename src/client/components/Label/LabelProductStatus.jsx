@@ -6,22 +6,20 @@ import { withStyles } from '@material-ui/core/styles';
 import labelProductStatusStyle from '../../assets/jss/styles/LabelProductStatusStyle.jsx';
 
 
-
 const LabelProductStatus = ({...props} ) => {
 
     const {
         classes,
-        outStock,
         inStock,
     } = props;
 
     const labelTitle = classnames({
-        'SIN EXISTENCIA': outStock,
+        'AGOTADO': !inStock,
         'PRODUCTO': inStock
     });
 
     const labelClasses = classnames({
-        [classes.labelOutOfStock]: outStock,
+        [classes.labelOutOfStock]: !inStock,
         [classes.labelInStock]: inStock,
     });
 
@@ -36,7 +34,6 @@ const LabelProductStatus = ({...props} ) => {
 
 LabelProductStatus.propTypes = {
     classes: PropTypes.object.isRequired,
-    outStock: PropTypes.bool,
     inStock: PropTypes.bool,
 };
 

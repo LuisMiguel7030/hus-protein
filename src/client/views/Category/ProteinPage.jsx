@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import { Grid } from "@material-ui/core";
+import { Grid } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles'
+import proteinPageStyle from '../../assets/jss/styles/proteinPageStyle.jsx';
+import PropTypes from 'prop-types';
 import { getProteinProducts } from '../../api/product.js';
-
-import ProductCard from "../../components/Card/ProductCard.jsx";
-
+import ProductCard from '../../components/Card/ProductCard.jsx';
 
 
 class ProteinPage extends Component {
@@ -26,9 +27,10 @@ class ProteinPage extends Component {
     }
 
     render() {
-        const {products} = this.state;
+        const { products } = this.state;
+        const { classes } = this.props;
         return (
-            <section>
+            <section className={classes.container}>
                 <Grid container wrap='wrap' justify='center' spacing={16}>
                     { products.map( (proteins) => {
                         return (
@@ -49,4 +51,8 @@ class ProteinPage extends Component {
     }
 }
 
-export default ProteinPage;
+ProteinPage.propTypes = {
+    classes: PropTypes.object.isRequired
+};
+
+export default withStyles(proteinPageStyle)(ProteinPage);

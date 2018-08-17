@@ -1,16 +1,6 @@
 import { primaryColor, secundaryColor } from '../Style.jsx';
 
-const productCardStyel = theme => ({
-    news: {
-        textAlign: 'center',
-        marginBottom: 20,
-        backgroundColor: secundaryColor,
-        '& > span': {
-            color: primaryColor,
-            padding: '5px 0',
-            fontWeight: '600'
-        }
-    },
+const productCardStyle = theme => ({
     card: {
        maxWidth: 240,
        maxHeight: 443,
@@ -38,4 +28,4 @@ const productCardStyel = theme => ({
     
 });
 
-export default productCardStyel;
+export default productCardStyle;
