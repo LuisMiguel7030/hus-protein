@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { switchRouters, indexRoute} from './routes/indexRoute.jsx';
+
 import { MuiThemeProvider, createMuiTheme, withStyles} from '@material-ui/core/styles';
 import { blueGrey, lightGreen } from '@material-ui/core/colors';
 import appStyle from './assets/jss/styles/appStyle.jsx';
 import Sidebar from './components/Appbar/Sidebar.jsx';
-import menuRoutes from './routes/menu.jsx';
+import menuRoutes from './routes/route/menu.jsx';
 import Footer from './components/Footer/Footer.jsx';
 
 
@@ -15,18 +17,6 @@ const muiTheme = createMuiTheme({
     secondary: { main: lightGreen['A700']}
   }
 });
-
-const switchRouters = (
-    <Switch>
-        {
-            menuRoutes.map( (props, key) => {
-                return (
-                    <Route path={props.path} exact={props.exact} component={props.component} key={key}/>
-                );
-            })
-        }
-    </Switch>
-);
 
 class App extends Component {
   render() {
@@ -41,6 +31,7 @@ class App extends Component {
                   <div className={classes.content}>
                     <div className={classes.toolbar} />
                     {switchRouters}
+                    {indexRoute}
                   </div>
                   <Footer />
                 </div>

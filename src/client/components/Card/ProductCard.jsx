@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import productCardStyle from '../../assets/jss/styles/productCardStyle.jsx';
 import LabelProduct from '../Label/LabelProductStatus.jsx';
 import classNames from 'classnames';
-import { AddShoppingCart, FavoriteBorder } from '@material-ui/icons';
+import { AddShoppingCart } from '@material-ui/icons';
 import { 
     Card, 
     CardMedia, 
@@ -62,6 +62,7 @@ class ProductCard extends Component {
                    ${pricing.price.toLocaleString()}
                 </Typography>
                 <div className={classes.actionContainer}>
+
                     <IconButton
                         color="default"
                         className={classes.button}
@@ -70,9 +71,7 @@ class ProductCard extends Component {
                     >
                         <AddShoppingCart className={classNames(classes.rightIcon, classes.iconSmall)}/>
                     </IconButton>
-                    <IconButton color="default" className={classes.button} aria-label="Agregar a favoritos">
-                        <FavoriteBorder className={classNames(classes.rightIcon, classes.iconSmall)}/>
-                    </IconButton>
+
                 </div>  
             </CardActions>
 

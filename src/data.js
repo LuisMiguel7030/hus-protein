@@ -79,5 +79,85 @@ export const products = [
         pricing: { price: 129900 },
         categories: "protein"
     },
+    {
+        title: "Stacker2 Go Pro ba",
+        brand: "Stacker2 Europe",
+        quantity: 2,
+        image: "http://localhost:3000/product-image/stacker-go-pro-bar.png",
+        pricing: { price: 60000 },
+        categories: "food"
+    },
+    {
+        title: "Protein Cake Bites",
+        brand: "Optimum Nutrition",
+        quantity: 2,
+        image: "http://localhost:3000/product-image/protein-cake-bites.png",
+        pricing: { price: 65000 },
+        categories: "food"
+    },
+    {
+        title: "Edamame Beans",
+        brand: "Artisan Grains",
+        quantity: 2,
+        image: "http://localhost:3000/product-image/grains_roasted-edamame-beans.png",
+        pricing: { price: 5000 },
+        categories: "food"
+    },
+    {
+        title: "Protein Cookie 59 g",
+        brand: "Quest Nutrition",
+        quantity: 2,
+        image: "http://localhost:3000/product-image/protein-cookie.png",
+        pricing: { price: 5000 },
+        categories: "food"
+    },
+    {
+        title: "Protein Coffee 25 g",
+        brand: "Multipower",
+        quantity: 2,
+        image: "http://localhost:3000/product-image/protein-coffee.png",
+        pricing: { price: 5000 },
+        categories: "food"
+    },
+    {
+        title: "Z-MAN SS 90 caps",
+        brand: "Xcore",
+        quantity: 2,
+        image: "http://localhost:3000/product-image/xcore_z-man.png",
+        pricing: { price: 35000 },
+        categories: "vitamin"
+    },
+    {
+        title: "Vitamin D 1000 I.U.",
+        brand: "Douglas",
+        quantity: 2,
+        image: "http://localhost:3000/product-image/vitamin-d.jpg",
+        pricing: { price: 35000 },
+        categories: "vitamin"
+    },
+    {
+        title: "Selenium 50 mcg",
+        brand: "Scitec",
+        quantity: 2,
+        image: "http://localhost:3000/product-image/selenium.png",
+        pricing: { price: 15000 },
+        categories: "vitamin"
+    },
+    {
+        title: "Animal Pak 44",
+        brand: "Universal",
+        quantity: 2,
+        image: "http://localhost:3000/product-image/animal-pak.png",
+        pricing: { price: 65000 },
+        categories: "vitamin"
+    },
+    {
+        title: "Opti-Men",
+        brand: "Optimum Nutrition\n",
+        quantity: 2,
+        image: "http://localhost:3000/product-image/opti-men.png",
+        pricing: { price: 65000 },
+        categories: "vitamin"
+    },
 ];
 

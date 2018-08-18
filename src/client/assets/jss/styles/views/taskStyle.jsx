@@ -1,7 +1,9 @@
-import { container } from '../Style.jsx';
+import { container } from '../../Style.jsx';
 
 const taskStyle = () => ({
-    container,
+    container: {
+        minHeight: '80vh'
+    },
     card: {
         minWidth: 400,
         padding: 30

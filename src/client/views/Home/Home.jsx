@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import homeStyle from '../../assets/jss/styles/homeStyle.jsx'; 
+import homeStyle from '../../assets/jss/styles/views/homeStyle.jsx'; 
 import { withStyles } from '@material-ui/core/styles';
 import { Paper, Grid, Typography } from '@material-ui/core';
 import { ProductCard, PopularCategoriesCard } from '../../components';
@@ -33,22 +33,7 @@ class Home extends Component {
             <PopularCategoriesCard />
           </Grid>
         </section>
-        
-        <Grid container wrap='wrap' justify='center' spacing={16}>
-          { products.map( (proteins) => {
-            return (
-              <Grid item key={proteins.id}>
-                <ProductCard
-                    image='http://localhost:3000/product-image/proteina.png'
-                    title={proteins.name}
-                    brand={proteins.provider}
-                    price={proteins.price}
-                    quantity={1}
-                />
-              </Grid>
-            );
-          })}
-        </Grid>
+
       </div>
     )
   }

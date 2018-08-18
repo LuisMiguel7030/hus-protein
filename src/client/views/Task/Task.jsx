@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { withStyles } from '@material-ui/core/styles';
-import taskStyle from '../../assets/jss/styles/taskStyle.jsx';
+import taskStyle from '../../assets/jss/styles/views/taskStyle.jsx';
 import { 
   TextField,
   Grid,

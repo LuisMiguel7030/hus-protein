@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { addCartItem } from '../../redux/actions/cart.js';
+
+
 import { Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles'
 import proteinPageStyle from '../../assets/jss/styles/views/proteinPageStyle.jsx';
@@ -10,7 +12,7 @@ import { getProteinProducts } from '../../api/product.js';
 import ProductCard from '../../components/Card/ProductCard.jsx';
 
 
-class ProteinPage extends Component {
+class FoodPage extends Component {
     constructor(props) {
         super(props);
 
@@ -56,7 +58,7 @@ class ProteinPage extends Component {
     }
 }
 
-ProteinPage.propTypes = {
+FoodPage.propTypes = {
     classes: PropTypes.object.isRequired,
     addCartItem: PropTypes.func.isRequired,
 };
@@ -65,4 +67,4 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({ addCartItem }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(withStyles(proteinPageStyle)(ProteinPage));
+export default connect(null, mapDispatchToProps)(withStyles(proteinPageStyle)(FoodPage));

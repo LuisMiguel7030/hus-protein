@@ -1,24 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {  NavLink } from 'react-router-dom';
+import ShoppingCartButton from '../IconButto/ShoppingCartButton.jsx';
 import sidebarStyle from '../../assets/jss/styles/sidebarStyle.jsx';
 import { withStyles } from '@material-ui/core/styles';
-import { FavoriteBorder, ShoppingCart } from '@material-ui/icons';
 import { 
-  Icon,
-  List, 
-  ListItem, 
-  ListItemIcon, 
-  ListItemText,
-  Drawer,
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Button,
-  Hidden } 
-from '@material-ui/core';
-
+    Icon,
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    Drawer,
+    AppBar,
+    Toolbar,
+    Typography,
+    IconButton,
+    Button,
+    Hidden,} from '@material-ui/core';
 
 class Sidebar extends React.Component {
   state = {
@@ -40,7 +38,7 @@ class Sidebar extends React.Component {
             routes.map( (props, key) => {
               return (
                 <NavLink
-                 to={props.path}
+                 to={props.path[1]}
                  activeClassName='active'
                  key={key}>
                   <ListItem button>
@@ -62,39 +60,36 @@ class Sidebar extends React.Component {
         <AppBar className={classes.appBar}>
           <Toolbar>
             <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={this.handleDrawerToggle}
-              className={classes.navIconHide}
+                color="inherit"
+                aria-label="open drawer"
+                onClick={this.handleDrawerToggle}
+                className={classes.navIconHide}
             >
               <Icon className='material-ui'>menu</Icon>
             </IconButton>
             <Typography variant="title" color="secondary" className={classes.flex}>
-              Hus Protein
+                Hus Protein
             </Typography>
-            <IconButton color="inherit" className={classes.button}>
-              <FavoriteBorder />
-            </IconButton>
-            <IconButton color="inherit" className={classes.button}>
-              <ShoppingCart />
-            </IconButton>
-            <Button color="inherit">Iniciar Sesión</Button>
+
+              <ShoppingCartButton to='/shopping'/>
+
+            <Button color="inherit">Luis Miguel</Button>
           </Toolbar>
         </AppBar>
         <Hidden mdUp>
           <Drawer
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={this.state.mobileOpen}
-            onClose={this.handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
+              variant="temporary"
+              anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+              open={this.state.mobileOpen}
+              onClose={this.handleDrawerToggle}
+              classes={{
+                paper: classes.drawerPaper,
+              }}
+              ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+              }}
           >
-            {drawer}
+              {drawer}
           </Drawer>
         </Hidden>
         <Hidden smDown implementation="css">

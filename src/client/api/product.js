@@ -1,3 +1,3 @@
 import axios from "axios";
 
-export const getProteinProducts = () => axios.get('/api/products');
+export const getProteinProducts = (category) => axios.get(`/api/products/${category}`);

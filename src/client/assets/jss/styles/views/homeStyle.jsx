@@ -1,5 +1,5 @@
-import slider from '../../img/slider.jpg';
-import { secundaryColor } from '../Style.jsx';
+import slider from '../../../img/slider.jpg';
+import { secundaryColor } from '../../Style.jsx';
 
 const homeStyle = theme => ({
     container: {
