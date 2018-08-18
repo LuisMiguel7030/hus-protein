@@ -28,11 +28,11 @@ class App extends Component {
               <Sidebar routes={menuRoutes} />
               <div className={classes.wrapper}>
                 <div className={classes.mainPanel}>
-                  <div className={classes.content}>
+                  <main className={classes.content}>
                     <div className={classes.toolbar} />
                     {switchRouters}
                     {indexRoute}
-                  </div>
+                  </main>
                   <Footer />
                 </div>
               </div> 

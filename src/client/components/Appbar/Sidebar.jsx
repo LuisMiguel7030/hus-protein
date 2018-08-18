@@ -31,7 +31,7 @@ class Sidebar extends React.Component {
     const { classes, theme, routes } = this.props;
 
     const drawer = (
-      <div>
+      <nav>
         <div className={classes.toolbar} />
         <List>
           {
@@ -52,11 +52,11 @@ class Sidebar extends React.Component {
             })
           }
         </List>
-      </div>
+      </nav>
     );
 
     return (
-      <div className={classes.root}>
+      <nav className={classes.root}>
         <AppBar className={classes.appBar}>
           <Toolbar>
             <IconButton
@@ -104,7 +104,7 @@ class Sidebar extends React.Component {
           </Drawer>
         </Hidden>
         <div className={classes.toolbar} />
-      </div>
+      </nav>
     );
   }
 }
