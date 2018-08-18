@@ -33,38 +33,44 @@ class ProductCard extends Component {
     };
 
     render() {
-        const { classes } = this.props;
+        const { classes, image, title, brand, pricing } = this.props;
         const { inStock } = this.state;
     return (
       <div>
         <Card className={classes.card}>
-            <CardMedia 
-              component='img'
-              src={this.props.image}
-              title='Imagen de la proteina'/>  
+            <CardMedia
+                className={classes.image}
+                component='img'
+                src={image}
+                title='Imagen de la proteina'/>
             <CardContent>
 
                 <LabelProduct
                     inStock={inStock}
                 />
                 <Typography className={classes.title} variant="headline" component="h2">
-                    {this.props.title}
+                    {title}
                 </Typography>
                 <Typography className={classes.subtitle} color="textSecondary">
-                    {this.props.brand}
+                    {brand}
                 </Typography>
                 
             </CardContent>
 
             <CardActions className={classes.action}>
                 <Typography className={classes.price}  color='secondary' variant='title' component="p">
-                   ${this.props.price.toLocaleString()}
+                   ${pricing.price.toLocaleString()}
                 </Typography>
                 <div className={classes.actionContainer}>
-                    <IconButton color="default" className={classes.button}>
+                    <IconButton
+                        color="default"
+                        className={classes.button}
+                        aria-label="Agregar a carrito de compras"
+                        onClick={this.props.onClick}
+                    >
                         <AddShoppingCart className={classNames(classes.rightIcon, classes.iconSmall)}/>
                     </IconButton>
-                    <IconButton color="default" className={classes.button}>
+                    <IconButton color="default" className={classes.button} aria-label="Agregar a favoritos">
                         <FavoriteBorder className={classNames(classes.rightIcon, classes.iconSmall)}/>
                     </IconButton>
                 </div>  
@@ -80,7 +86,7 @@ ProductCard.propTypes = {
     classes: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
     brand: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    pricing: PropTypes.object.isRequired,
     image: PropTypes.string.isRequired,
 };
 

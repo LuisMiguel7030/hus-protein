@@ -8,8 +8,7 @@ const URI = 'mongodb://localhost/hus-protein';
 const conexion = mongoose.connect(URI)
     .then(db => {
         console.log('DB is connected');
-        product.remove({});
-        product.insertMany(products);
+        //product.insertMany(products);
     })
     .catch(err => console.error(err));
 

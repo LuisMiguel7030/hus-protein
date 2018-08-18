@@ -2,8 +2,11 @@ import { primaryColor, secundaryColor } from '../Style.jsx';
 
 const productCardStyle = theme => ({
     card: {
-       maxWidth: 240,
+       width: 240,
        maxHeight: 443,
+    },
+    image: {
+        height: 240
     },
     title: {
         fontSize: 18,

@@ -1,7 +1,7 @@
 
 const productCardStyle = theme => ({
     container: {
-        minHeight: '100vh'
+        minHeight: '100vh',
     },
 });
 

@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { addCartItem } from '../../redux/actions/cart.js';
+
+
 import { Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles'
 import proteinPageStyle from '../../assets/jss/styles/proteinPageStyle.jsx';
@@ -26,21 +31,22 @@ class ProteinPage extends Component {
             })
     }
 
+    addToCart = item => {
+        this.props.addCartItem(item)
+    };
+
     render() {
         const { products } = this.state;
         const { classes } = this.props;
         return (
             <section className={classes.container}>
-                <Grid container wrap='wrap' justify='center' spacing={16}>
-                    { products.map( (proteins) => {
+                <Grid container wrap='wrap' justify='center' spacing={16} >
+                    { products.map( (feature) => {
                         return (
-                            <Grid item key={proteins._id}>
+                            <Grid item key={feature._id}>
                                 <ProductCard
-                                    image={proteins.image}
-                                    title={proteins.title}
-                                    brand={proteins.brand}
-                                    price={proteins.pricing.price}
-                                    quantity={proteins.quantity}
+                                    {...feature}
+                                    onClick={() => this.addToCart({ ...feature })}
                                 />
                             </Grid>
                         );
@@ -52,7 +58,12 @@ class ProteinPage extends Component {
 }
 
 ProteinPage.propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    addCartItem: PropTypes.func.isRequired,
 };
 
-export default withStyles(proteinPageStyle)(ProteinPage);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ addCartItem }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(withStyles(proteinPageStyle)(ProteinPage));
